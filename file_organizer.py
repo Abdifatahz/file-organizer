@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 
 def organize_files_by_type(directory):
@@ -25,5 +26,13 @@ def organize_files_by_type(directory):
             shutil.move(file_path, os.path.join(folder_path, filename))
 
 
-# Example usage:
-organize_files_by_type("/Users/abdifatah/Desktop")
+if __name__ == "__main__":
+    # Check if a directory was passed as an argument
+    if len(sys.argv) != 2:
+        print("Usage: python organize.py <directory>")
+    else:
+        directory = sys.argv[1]
+        if os.path.isdir(directory):
+            organize_files_by_type(directory)
+        else:
+            print(f"The directory {directory} does not exist.")
