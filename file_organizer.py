@@ -15,7 +15,7 @@ def organize_files_by_type(directory):
             file_extension = filename.split('.')[-1]
 
             # Create a folder name based on the file extension
-            folder_name = file_extension + "_files"
+            folder_name = file_extension + " "
             folder_path = os.path.join(directory, folder_name)
 
             # Create the folder if it doesn't exist
